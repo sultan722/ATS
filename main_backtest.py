@@ -19,7 +19,7 @@ asset_sector = pd.read_excel("Commodity Data.xlsx", sheet_name = "Assets")
 try:
     returns = pd.read_csv("Commodity_Returns.csv").set_index("date")
 except FileNotFoundError:
-    returns = data/data.shift(1).set_index("date")
+    returns = data/data.shift(1)
     returns.to_csv("Commodity_Returns.csv")
 
 """
